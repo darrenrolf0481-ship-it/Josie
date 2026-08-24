@@ -1,0 +1,6 @@
+{
+  "name": "JOSIE AI Studio & Playground",
+  "description": "Interactive, seamless conversational UI for goekdenizguelmez/JOSIE with dual Ollama local and OpenRouter execution, Model Context Protocol (MCP) tool execution, real-time web search grounding, thought stream decoding, voice, and prompt management.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
