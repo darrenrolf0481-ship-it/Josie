@@ -1,0 +1,13 @@
+{
+  "minScore": 85,
+  "ignore": [
+    "deepseek-harness/**",
+    "dist/**",
+    "node_modules/**"
+  ],
+  "disableRules": [
+    "unused-dependency-motion",
+    "unused-dependency-autoprefixer",
+    "unused-dependency-tailwindcss"
+  ]
+}
