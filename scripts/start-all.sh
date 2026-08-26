@@ -19,6 +19,19 @@ if [ -f "$REPO_PATCH" ] && ! grep -q "openrouter" "$PROFILE_PATCH" 2>/dev/null; 
   echo "  installed openrouter profile patch"
 fi
 
+# Ensure the ADHD-SAGE persona + capabilities presets are installed (idempotent).
+# The harness repo is a nested clone that can be reset; restore from the versioned copies.
+PRESET_DIR="/root/Josie/dsh-profile/agent-presets"
+HARNESS_PRESETS="/root/Josie/deepseek-harness/apps/cli/config/agent-presets"
+for p in standard code minimal cordis; do
+  src="$PRESET_DIR/$p/agent.cordis.yml"
+  dst="$HARNESS_PRESETS/$p/agent.cordis.yml"
+  if [ -f "$src" ] && ! cmp -s "$src" "$dst" 2>/dev/null; then
+    cp "$src" "$dst"
+    echo "  restored $p preset (ADHD persona + capabilities)"
+  fi
+done
+
 if already "[b]in.js --profile web"; then
   echo "  already running (pid $(pgrep -f '[b]in.js --profile web' | head -1))"
 else
