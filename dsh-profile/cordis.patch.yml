@@ -1,0 +1,8 @@
+# dsh web-profile patch layer: adds the OpenRouter LLM provider route so the
+# harness agent (ADHD-SAGE persona) runs through OpenRouter like Josie does.
+# Installed to ~/.dsh/profiles/web/cordis.patch.yml by scripts/start-all.sh.
+- id: llm-pi-ai
+  config:
+    providers:
+      openrouter:
+        apiKeyEnv: OPENROUTER_API_KEY

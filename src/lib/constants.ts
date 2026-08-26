@@ -1,11 +1,11 @@
 import { AppSettings, JosiePersona, PromptTemplate } from "../types";
 
 export const DEFAULT_SETTINGS: AppSettings = {
-  provider: "ollama",
+  provider: "openrouter",
   ollamaBaseUrl: "http://127.0.0.1:11434",
   ollamaModel: "goekdenizguelmez/JOSIE",
   openRouterApiKey: "",
-  openRouterModel: "openrouter/auto",
+  openRouterModel: "deepseek/deepseek-chat",
   temperature: 0.7,
   topP: 0.9,
   topK: 40,
